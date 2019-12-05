@@ -1,0 +1,164 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.top-contents {
+    text-align: center;
+}
+ 
+
+.image1{
+    background-image: url(home-image.jpeg);
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+}
+ 
+.n {
+    font-size: 200px;
+    font-family: "Dieter Steffmann", "Old English Text MT", fantasy, serif;
+}
+
+.home-text {
+    padding-top: 150px;
+    font-size: 150px;
+    
+}
+
+
+// .home-btn {
+//     background: #3D4C53;
+//     margin : 0 auto;
+//     width : 30%;
+//     height : 60px;
+//     overflow: hidden;
+//     text-align : center;
+//     transition : .2s;
+//     cursor : pointer;
+//     border-radius: 30px;
+//     box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+//     margin-top: 150px;
+//     opacity: 0.6;
+//   }
+//   .btnTwo {
+//     position : relative;
+//     width : 200px;
+//     height : 120px;
+//     margin-top: -100px;
+//     padding-top: 2px;
+//     background : #26A69A;
+//     left : -250px;
+//     transition : .4s;
+//   }
+//   .btnText {
+//     color : white;
+//     font-size: 40px;
+//     transition : .3s;
+//   }
+//   .btnText2 {
+//     margin-top : 63px;
+//     margin-right : -140px;
+//     font-size: 35px;
+//     text-align: center;
+//     color : #FFF;
+//   }
+//   .home-btn:hover .btnTwo{ 
+//     left: -110px;
+//   }
+//   .home-btn:hover .btnText{
+//     margin-left : 65px;
+//   }
+//   .home-btn:active { 
+//     box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+//   }
+
+//   .home-btn:hover {
+//     opacity: 1;
+//   }
+
+.home-btn01 {
+  width: 100%;
+}
+
+  .page {
+    text-align: center;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  /* add default color for animation start  */
+  
+  
+  /* toggle this class */
+  
+  .color-bg-start {
+    background-color: salmon;
+  }
+  
+  
+  /* toggle class bg-animate-color */
+  
+  .bg-animate-color {
+    animation: random-bg .5s linear infinite;
+  }
+  
+  
+  /* add animation to bg color  */
+  
+  @keyframes random-bg {
+    from {
+      filter: hue-rotate(0);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  .fun-btn {
+    /* change bg color to get different hues    */
+    background-color: salmon;
+    color: white;
+    padding: 2em 3em;
+    border: none;
+    transition: all .3s ease;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    outline: none;
+    align-self: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .fun-btn:hover {
+    animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+  }
+  
+  .start-fun {
+    background-color: #fff !important;
+    /* change color of button text when fun is started   */
+    color: salmon !important;
+  }
+  
+  /* pulsating effect on button */
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.3);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.3);
+    }
+    70% {
+      transform: scale(1);
+    }
+  }

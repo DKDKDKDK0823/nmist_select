@@ -1,0 +1,43 @@
+<div class="wrap">
+    <div class="image1">
+        <div class="home-contents">
+            <div class="top-contents">
+                <h1 class="home-text"><span class="n">N</span>mist_select</h1>
+            </div>
+           
+                <div class="home-btn01">
+                    <div class="page">
+                    <span data-turbolinks="false">
+                        <%= link_to "/wears" do %> 
+                            <button class="fun-btn">press for fun</button>
+                        <% end %>
+                    <span>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+Pace.on('done', function(){
+    $('.wrap').fadeIn();
+    $('.top-contents').hide().fadeIn(5000);
+    $('.fun-btn').on('click', function(event) {
+    $(this).toggleClass('start-fun');
+    var $page = $('.page');
+    $page.toggleClass('color-bg-start')
+        .toggleClass('bg-animate-color');
+
+    //change text when when button is clicked
+
+    $(this).hasClass('start-fun') ?
+        $(this).text('stop the fun') :
+        $(this).text('start the fun');
+
+    });
+});
+
+
+
+</script>

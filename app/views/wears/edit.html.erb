@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <%= form_with model: @wear, url: "/wears/#{@wear.id}" , local: true do |f| %>
+                <div class="col-lg-12">
+                    <% @wear.images.each do |image| %>
+                        <div class="col-lg-3">
+                            <span><%= f.check_box :image_ids, {:multiple => true}, image.id, false %></span>
+                            <%= image_tag image, :size=>"200x200" %>
+                        </div>
+                    <% end %>
+                    <div class="col-lg-12 wraning">
+                        <p class="text-center"><i class="fas fa-dot-circle"></i>ボックスに<i class="fas fa-check"></i>を着けて更新すると削除されます<i class="fas fa-dot-circle"></i></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <%= f.label :'名前' %>
+                        <%= f.text_field :name %>
+                    </div>
+                    <div class="col-lg-4">
+                        <%= f.label :'値段' %>
+                        <%= f.text_field :price %>
+                    </div>
+                    <div class="col-lg-4">
+                        <%= f.label :'サイズ' %>
+                        <%= f.collection_select(:size_id,@sizes,:id,:name) %>
+                    </div>
+                    <div class="col-lg-4">
+                        <%= f.label :'種類' %>
+                        <%= f.collection_select(:type_id,@types,:id,:name) %>
+                    </div>   
+                    <div class="col-lg-4">
+                        <%= f.label :"補足説明" %>
+                        <%= f.text_area :introduction %>
+                    </div> 
+                    <div class="col-lg-4">
+                        <%= f.submit "編集完了" %>
+                    </div>            
+                </div>             
+            <% end %>
+        </div>
+    </div>
+</div>

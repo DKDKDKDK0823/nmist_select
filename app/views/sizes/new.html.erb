@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-12">
+                <% @sizes.each do |f| %>
+                    <div class="col-lg-2">
+                        <h1 class="text-center"><i class="fas fa-arrow-right"></i><%= f.name %></h1>
+                    </div>
+                <% end %>
+            </div>
+            <div class="col-lg-6">
+                <%= form_for(@size) do |f| %>
+                    <div class="col-lg-12">
+                        <h1 class="text-center">新規登録</h1>
+                    </div>
+                    <div class="col-lg-12">
+                        <%= f.label :'サイズ新規登録' %>
+                        <%= f.text_field :name %>
+                    </div>
+                    <div class="col-lg-6">
+                        <%= f.submit "新規登録" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

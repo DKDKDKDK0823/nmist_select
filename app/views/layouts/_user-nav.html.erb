@@ -1,0 +1,75 @@
+<div class="header">
+  <div class="navigation">
+    <span class="nav-btn">
+      <div class="btn-icon">
+        <%= link_to "/" do  %>
+          <i class="fab fa-twitter fa-large"></i>
+        <% end %>
+        <%= link_to "https://www.instagram.com/nmist_select/?hl=ja" do %>
+            <i class="fab fa-instagram fa-large"></i>
+        <% end %>
+        <%= link_to "/" do %>
+          <i class="fab fa-facebook-square fa-large"></i>
+        <% end %>
+      </div>
+      <button id="sized" class="menu">
+        <span></span>        
+      </button>
+    </span>
+      <div id="myModal" class="modal">
+      <!-- Modal content -->
+        <div class="modal-content animated           zoomIn">
+        <div class="modal-header">
+          <span class="close">×</span>
+      </div>
+          
+      <div class="modal-body nav">
+        <ul>
+          <li>
+              <span data-turbolinks="false">
+                <%= link_to '・HOME', "/wears" %>
+              </span>
+            </li>
+          <li><%= link_to '・ABOUT', "/wears" %></li>
+          <li><%= link_to '・SERVICE', "/weaes" %></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <hr>
+          <p>
+          <strong>Your City</strong>
+          <br>Max Mustermann &#149;                   +49 121 1734247 &#149;
+          Randomstreet, 23424<%= link_to "https://www.instagram.com/nmist_select/?hl=ja" do %><i class="fab fa-instagram"></i><% end %>  <br>
+          <b>your@emailadress.com</b>
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+<script>
+  // Get Modal
+var modal = document.getElementById('myModal');
+    
+// Get pseudoelement to open Modal
+var btn = document.getElementById("sized");
+
+// Get the <span> element to close Modal
+var span = document.getElementsByClassName("close")[0];
+
+// When user clicks button, open Modal
+btn.onclick = function() {
+   modal.style.display = "block";
+   };
+
+// When user clicks Close (x), close Modal
+span.onclick = function() {
+   modal.style.display = "none";
+   };
+
+// When user clicks anywhere outside of the Modal, close Modal
+ window.onclick = function(event) {
+    if (event.target == modal) {
+       modal.style.display = "none";
+       }
+    }
+</script>

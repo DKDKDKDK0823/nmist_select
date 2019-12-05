@@ -1,0 +1,66 @@
+<div class="wrap">
+    <div class="col text-right">
+        <%= render 'layouts/user-nav' %>
+    </div>
+    <div class="jumbotron background-image1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-12">
+                        <% @wears.each do |f| %>
+                            <div class="col-lg-3 col-lg-offset-1 wear-box">
+                                <div class="col-lg-12">
+                                    <% if f.images.attached? %>
+                                        <div class="slider1">
+                                            <% f.images.each do |image| %>
+                                                <div class="admin-index-image">
+                                                    <%= image_tag image.variant(combine_options:{resize:"200x200^",crop:"200x200+0+0",gravity: :center}).processed %>
+                                                </div> 
+                                            <% end %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                                <div class="col-lg-12">
+                                    <span class="font-color">
+                                        <span data-turbolinks="false">
+                                            <%= link_to "/wears/#{f.id}" do %>
+                                                <p class="text-center"><%= f.name %></p>
+                                                <p class="text-center">¥<%= f.price %></p>
+                                            <% end %>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="col-lg-12 image-box">
+                                    <%= image_tag 'S__351952902.png' %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+Pace.on('done', function(){
+    $('.wrap').fadeIn();
+        $('.slider1').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: true,
+        arrows: false,
+    });
+});
+// $(document).on('turbolinks:load', function(){
+//     $('.slider1').slick({
+//         slidesToShow: 1,
+//         slidesToScroll: 1,
+//         infinite: true,
+//         arrows: true,
+//         dots: true,
+//         arrows: false,
+//     });
+// });
+</script>
